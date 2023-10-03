@@ -1,0 +1,126 @@
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* style pour le caroussel */
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Ajustez la largeur selon vos besoins */
+    margin: 0 auto;
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    margin-top: 10px;
+}
+
+/* Styles pour les flèches du carrousel */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 55px;
+    color: rgba(151, 151, 151, 0.707); /* Couleur de la flèche transparente */
+    cursor: pointer;
+    z-index: 2; /* Pour les positionner au-dessus du carrousel */
+}
+
+.left-arrow {
+    left: 300px; /* Position de la flèche de gauche */
+}
+
+.right-arrow {
+    right: 300px; /* Position de la flèche de droite */
+}
+
+
+/* Styles pour la barre de navigation */
+nav {
+    background-color: #5BE6D1; /* Couleur de fond bleu */
+    padding: 15px 0; /* Espacement intérieur */
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline; /* Afficher les éléments de la liste en ligne */
+    margin-right: 30px; /* Espacement entre les éléments */
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none; /* Supprimer la décoration des liens */
+    color: white; /* Couleur du texte blanc */
+    font-weight: bold; /* Police en gras */
+}
+
+
+/* Styles pour la section de description */
+#description {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center; /* Centre le contenu */
+}
+
+/* Styles pour les informations de la propriété (rendu vertical et centré) */
+.property-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement */
+}
+
+.property-info div {
+    margin: 10px;
+    text-align: center; /* Centre le texte */
+}
+
+.property-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.property-price {
+    font-size: 20px;
+}
+
+.property-capacity,
+.property-amenities,
+.property-languages,
+.property-rates,
+.property-payment {
+    margin-top: 20px;
+}
+
+
+/* Styles pour le conteneur de la carte */
+#map {
+    width: 600px; /* Définir la largeur de la carte */
+    height: 400px; /* Définir la hauteur de la carte */
+    position: absolute; /* Position absolue par rapport au parent */
+    left: 50%; /* Centrer horizontalement au milieu de la page */
+    border: 1px solid #ccc; /* Ajouter une bordure pour la carte (optionnel) */
+}
+
