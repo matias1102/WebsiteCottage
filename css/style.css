@@ -1,11 +1,13 @@
 
-
-
 body {
     margin: 0;
     padding: 0;
 }
 
+/* Styles pour l'espace entre le carrousel et la navbar */
+.carousel-section {
+    margin-top: 20px; /* Ajoutez l'espace souhaité en pixels */
+}
 
 /* style pour le caroussel */
 .carousel-container {
@@ -53,7 +55,7 @@ button {
 
 /* Styles pour la barre de navigation */
 nav {
-    background-color: #5BE6D1; /* Couleur de fond bleu */
+    background-color: #44CF40; /* Couleur de fond bleu */
     padding: 15px 0; /* Espacement intérieur */
     margin: 0;
 }
@@ -116,6 +118,11 @@ a {
 
 
 /* Styles pour le conteneur de la carte */
+#carte {
+    text-align: center; /* Centrer horizontalement */
+    position: relative; /* Permettre de positionner le texte par rapport à ce conteneur */
+}
+
 #map {
     width: 600px; /* Définir la largeur de la carte */
     height: 400px; /* Définir la hauteur de la carte */
@@ -123,4 +130,8 @@ a {
     left: 50%; /* Centrer horizontalement au milieu de la page */
     transform: translateX(-50%); /* Ajuster la position horizontale au milieu */
     border: 1px solid #ccc; /* Ajouter une bordure pour la carte (optionnel) */
+}
+
+#carte h2 {
+    margin-bottom: 10px; /* Espacement entre le texte et la carte */
 }
