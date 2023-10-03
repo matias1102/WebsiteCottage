@@ -1,17 +1,17 @@
 
 /* Styles pour l'en-tête */
 header {
-    background-color: #087505; /* Couleur de fond de l'en-tête */
+    background-color: #53B7FF ; /* Couleur de fond de l'en-tête */
     padding: 10px 0; /* Espacement intérieur */
-    display: flex; /* Utiliser Flexbox pour organiser horizontalement */
-    justify-content: flex; /* Aligner le contenu à droite du header */
+    text-align: center; /* Centre le contenu horizontalement */
     color: white; /* Couleur du texte blanc */
 }
 
 /* Styles pour le conteneur du contenu de l'en-tête */
 .header-content {
-    display: flex; /* Utiliser Flexbox pour aligner les éléments horizontalement */
+    display: flex; /* Utiliser Flexbox pour centrer les éléments horizontalement */
     align-items: center; /* Aligner verticalement au centre */
+    justify-content: center; /* Centrer horizontalement */
 }
 
 /* Styles pour le logo */
@@ -26,6 +26,7 @@ header h1 {
     font-size: 24px; /* Taille de police du nom du gîte */
     margin: 0; /* Supprimer les marges par défaut */
 }
+
 
 
 /* Styles pour le conteneur principal (body) */
@@ -64,29 +65,35 @@ button {
     margin-top: 10px;
 }
 
+
 /* Styles pour les flèches du carrousel */
 .carousel-arrow {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 50%; /* Centre les flèches verticalement par rapport au carrousel */
     font-size: 55px;
     color: rgba(151, 151, 151, 0.707); /* Couleur de la flèche transparente */
     cursor: pointer;
     z-index: 2; /* Pour les positionner au-dessus du carrousel */
+    transition: color 0.3s ease; /* Animation de transition de couleur */
 }
 
 .left-arrow {
-    left: 300px; /* Position de la flèche de gauche */
+    left: 10px; /* Ajuster la position de la flèche de gauche */
+    transform: translateY(-50%); /* Centrer verticalement par rapport au carrousel */
 }
 
 .right-arrow {
-    right: 300px; /* Position de la flèche de droite */
+    right: 10px; /* Ajuster la position de la flèche de droite */
+    transform: translateY(-50%); /* Centrer verticalement par rapport au carrousel */
 }
+
+
+
 
 
 /* Styles pour la barre de navigation */
 nav {
-    background-color: #087505; /* Couleur de fond bleu */
+    background-color: #53B7FF ; /* Couleur de fond bleu */
     padding: 15px 0; /* Espacement intérieur */
     margin: 0;
     text-align: center;
@@ -96,6 +103,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 li {
