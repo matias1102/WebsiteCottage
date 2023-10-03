@@ -1,8 +1,39 @@
 
+/* Styles pour l'en-tête */
+header {
+    background-color: #087505; /* Couleur de fond de l'en-tête */
+    padding: 10px 0; /* Espacement intérieur */
+    display: flex; /* Utiliser Flexbox pour organiser horizontalement */
+    justify-content: flex; /* Aligner le contenu à droite du header */
+    color: white; /* Couleur du texte blanc */
+}
+
+/* Styles pour le conteneur du contenu de l'en-tête */
+.header-content {
+    display: flex; /* Utiliser Flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Aligner verticalement au centre */
+}
+
+/* Styles pour le logo */
+header img {
+    max-width: 100px; /* Définir la largeur maximale du logo */
+    height: auto; /* Hauteur automatique proportionnelle */
+    margin-right: 10px; /* Espacement entre le logo et le nom du gîte */
+}
+
+/* Styles pour le nom du gîte */
+header h1 {
+    font-size: 24px; /* Taille de police du nom du gîte */
+    margin: 0; /* Supprimer les marges par défaut */
+}
+
+
+/* Styles pour le conteneur principal (body) */
 body {
     margin: 0;
     padding: 0;
 }
+
 
 /* Styles pour l'espace entre le carrousel et la navbar */
 .carousel-section {
@@ -55,9 +86,10 @@ button {
 
 /* Styles pour la barre de navigation */
 nav {
-    background-color: #44CF40; /* Couleur de fond bleu */
+    background-color: #087505; /* Couleur de fond bleu */
     padding: 15px 0; /* Espacement intérieur */
     margin: 0;
+    text-align: center;
 }
 
 ul {
@@ -85,6 +117,8 @@ a {
     padding: 20px;
     margin-top: 20px;
     text-align: center; /* Centre le contenu */
+    display: flex; /* Utiliser Flexbox pour organiser verticalement */
+    flex-direction: column; /* Organiser verticalement */
 }
 
 /* Styles pour les informations de la propriété (rendu vertical et centré) */
