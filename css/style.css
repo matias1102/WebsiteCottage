@@ -1,9 +1,12 @@
-
 /* Styles pour l'en-tête */
 header {
-    background-color: #53B7FF ; /* Couleur de fond de l'en-tête */
-    padding: 10px 0; /* Espacement intérieur */
-    text-align: center; /* Centre le contenu horizontalement */
+    margin: 0;
+    background-color: #53B7FF; /* Couleur de fond de l'en-tête */
+    padding: 1%; /* Espacement intérieur */
+    display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
+    flex-direction: row;
+    justify-content: space-between; /* Espacez les éléments horizontalement */
+    align-items: center; /* Alignez verticalement au centre */
     color: white; /* Couleur du texte blanc */
 }
 
@@ -11,7 +14,6 @@ header {
 .header-content {
     display: flex; /* Utiliser Flexbox pour centrer les éléments horizontalement */
     align-items: center; /* Aligner verticalement au centre */
-    justify-content: center; /* Centrer horizontalement */
 }
 
 /* Styles pour le logo */
@@ -23,8 +25,20 @@ header img {
 
 /* Styles pour le nom du gîte */
 header h1 {
-    font-size: 24px; /* Taille de police du nom du gîte */
-    margin: 0; /* Supprimer les marges par défaut */
+    font-size: 40px; /* Taille de police du nom du gîte */
+    margin: 0; /* Supprimez les marges par défaut */
+}
+
+/* Styles pour le bouton de connexion */
+#btn-connexion {
+    background-color: #087505; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement intérieur du bouton */
+    border: none; /* Supprimez la bordure */
+    border-radius: 4px; /* Ajoutez des coins arrondis */
+    cursor: pointer; /* Curseur pointeur */
+    font-weight: bold; /* Police en gras */
+    /* Supprimez cette ligne pour permettre la séparation des éléments horizontalement */
 }
 
 
@@ -185,3 +199,81 @@ a {
 #carte h2 {
     margin-bottom: 10px; /* Espacement entre le texte et la carte */
 }
+
+
+
+
+
+/* Styles pour la page de connexion */
+#connexion {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Ajoutez une position relative pour centrer le bouton */
+    overflow: hidden; /* Cache le débordement du bouton centré */
+    height: 100%; /* Ajuste la hauteur de la section de connexion à 100% */
+    box-sizing: border-box; /* Inclut la marge dans la hauteur totale */
+}
+
+.login-container {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto;
+}
+
+.login-container h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+button {
+    background-color: #53B7FF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative; /* Ajoutez une position relative pour centrer le bouton */
+    left: 50%; /* Déplace le bouton de 50% vers la droite pour le centrer */
+    transform: translateX(-50%); /* Centre horizontalement le bouton */
+    margin-top: 20px; /* Ajoute une marge au-dessus du bouton pour l'espacer */
+}
+
+button:hover {
+    background-color: #0A3D91; /* Couleur au survol */
+}
+
+
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    margin-right: 20px; /* Ajoutez une marge à droite pour éviter que les cadres ne touchent le bord */
+}
+
+
+
+

@@ -1,0 +1,102 @@
+/* Styles pour l'en-tête */
+header {
+    background-color: #53B7FF ; /* Couleur de fond de l'en-tête */
+    padding: 10px 0; /* Espacement intérieur */
+    text-align: center; /* Centre le contenu horizontalement */
+    color: white; /* Couleur du texte blanc */
+}
+
+/* Styles pour le conteneur du contenu de l'en-tête */
+.header-content {
+    display: flex; /* Utiliser Flexbox pour centrer les éléments horizontalement */
+    align-items: center; /* Aligner verticalement au centre */
+    justify-content: center; /* Centrer horizontalement */
+}
+
+/* Styles pour le logo */
+header img {
+    max-width: 100px; /* Définir la largeur maximale du logo */
+    height: auto; /* Hauteur automatique proportionnelle */
+    margin-right: 10px; /* Espacement entre le logo et le nom du gîte */
+}
+
+/* Styles pour le nom du gîte */
+header h1 {
+    font-size: 24px; /* Taille de police du nom du gîte */
+    margin: 0; /* Supprimer les marges par défaut */
+}
+
+/* Styles pour le conteneur principal (body) */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Styles pour la barre de navigation de la page d'administration */
+nav {
+    background-color: #53B7FF;
+    padding: 15px 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Styles pour les sections de modification */
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #53B7FF;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+form {
+    text-align: center;
+}
+
+textarea, input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #53B7FF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #0A3D91;
+}

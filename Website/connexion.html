@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <!-- Ajoutez ici vos mots-clés pour le référencement (balise meta) -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <!-- Header (peut être le même que sur les autres pages) -->
+    <header>
+        <div></div>
+        <div class="header-content">
+            <img src="../image/LOGO.png" alt="Logo du Gîte">
+            <h1>Figuiès</h1>
+        </div>
+        <div></div>
+    </header>
+
+    <!-- Page de connexion -->
+    <section id="connexion">
+        <div class="login-container">
+            <h2>Connexion</h2>
+            <form action="traitement_connexion.php" method="post">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Se connecter</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pied de page (peut être le même que sur les autres pages) -->
+    <footer>
+        <!-- Adresse du gîte -->
+    </footer>
+</body>
+</html>
