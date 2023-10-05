@@ -93,11 +93,19 @@ button {
 
 /* Styles pour la barre de navigation */
 nav {
-    background-color: #53B7FF ; /* Couleur de fond bleu */
+    position: fixed; /* Fixe la navbar en haut de l'écran */
+    top: 0; /* Place la navbar au bord supérieur de l'écran */
+    background-color: #53B7FF; /* Nouvelle couleur de fond bleu */
     padding: 15px 0; /* Espacement intérieur */
     margin: 0;
-    text-align: center;
+    text-align: center; /* Centre le contenu horizontalement */
+    width: 100%; /* Occupe toute la largeur de l'écran */
+    z-index: 1000; /* Augmentez la valeur du z-index pour mettre la navbar au premier plan */
+    transition: background-color 0.3s ease; /* Animation de transition de couleur */
 }
+
+/* ... Autres styles pour ul, li, a, etc. ... */
+
 
 ul {
     list-style-type: none;
