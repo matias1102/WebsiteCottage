@@ -181,10 +181,10 @@ a {
 }
 
 
-/* Styles pour le conteneur de la carte */
 #carte {
-    text-align: center; /* Centrer horizontalement */
-    position: relative; /* Permettre de positionner le texte par rapport à ce conteneur */
+    text-align: center;
+    position: relative;
+    margin-bottom: 500px; /* Ajoutez une marge basse équivalente à la hauteur de la carte */
 }
 
 #map {
@@ -275,5 +275,25 @@ button:hover {
 }
 
 
+#contact {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
 
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+#contact a {
+    color: #007bff; /* Couleur du lien */
+    text-decoration: underline; /* Souligner le lien au survol */
+}
 
