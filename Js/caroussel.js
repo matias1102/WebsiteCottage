@@ -1,32 +1,33 @@
-const carouselContainer = document.querySelector('.carousel-container');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-
-let currentIndex = 0;
-
-function showSlide(index) {
+document.addEventListener("DOMContentLoaded", function() {
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
-    slides.forEach((slide, i) => {
-        const slideOffset = 100 * (i - index);
-        slide.style.transform = `translateX(${slideOffset}%)`;
-    });
-}
 
-
-leftArrow.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex-=2;
-        showSlide(currentIndex);
+    function showSlide(index) {
+        slides.forEach((slide) => {
+            slide.style.display = 'none';
+        });
+        slides[index].style.display = 'block';
     }
-});
 
-rightArrow.addEventListener('click', () => {
-    const slides = document.querySelectorAll('.carousel-slide');
-    if (currentIndex < 2*slides.length-2 ) {
-        currentIndex+=2;
-        showSlide(currentIndex);
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
     }
-});
 
-// Affiche la première diapositive au chargement de la page
-showSlide(currentIndex);
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    const prevButton = document.getElementById('prevBtn');
+    const nextButton = document.getElementById('nextBtn');
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    // Automatiquement passer à la diapositive suivante toutes les 3 secondes
+    setInterval(nextSlide, 30000);
+
+    // Afficher la première image dès le chargement de la page
+    showSlide(currentSlide);
+});
