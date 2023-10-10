@@ -50,59 +50,6 @@ body {
 }
 
 
-/* Styles pour l'espace entre le carrousel et la navbar */
-.carousel-section {
-    margin-top: 20px; /* Ajoutez l'espace souhaité en pixels */
-}
-
-/* style pour le caroussel */
-.carousel-container {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px; /* Ajustez la largeur selon vos besoins */
-    margin: 0 auto;
-}
-
-.carousel-slide {
-    flex: 0 0 auto;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-button {
-    margin-top: 10px;
-}
-
-
-/* Styles pour les flèches du carrousel */
-.carousel-arrow {
-    position: absolute;
-    top: 50%; /* Centre les flèches verticalement par rapport au carrousel */
-    font-size: 55px;
-    color: rgba(151, 151, 151, 0.707); /* Couleur de la flèche transparente */
-    cursor: pointer;
-    z-index: 2; /* Pour les positionner au-dessus du carrousel */
-    transition: color 0.3s ease; /* Animation de transition de couleur */
-}
-
-.left-arrow {
-    left: 10px; /* Ajuster la position de la flèche de gauche */
-    transform: translateY(-50%); /* Centrer verticalement par rapport au carrousel */
-}
-
-.right-arrow {
-    right: 10px; /* Ajuster la position de la flèche de droite */
-    transform: translateY(-50%); /* Centrer verticalement par rapport au carrousel */
-}
-
-
-
 
 
 /* Styles pour la barre de navigation */
@@ -297,3 +244,46 @@ button:hover {
     text-decoration: underline; /* Souligner le lien au survol */
 }
 
+
+
+#galerie {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.carousel-slide {
+    display: none;
+}
+
+.carousel-slide img {
+    width: 50%;
+    max-width: 400px;
+}
+
+#prevBtn, #nextBtn {
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 10%;
+}
+
+#nextBtn {
+    left: 80%;
+}
