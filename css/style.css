@@ -47,6 +47,11 @@ header h1 {
 body {
     margin: 0;
     padding: 0;
+    background-image: url('../image/image4.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
 
@@ -248,7 +253,7 @@ button:hover {
 
 #galerie {
     text-align: center;
-    background-color: #f9f9f9;
+    
     padding: 20px;
 }
 
