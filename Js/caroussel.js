@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     nextButton.addEventListener('click', nextSlide);
 
     // Automatiquement passer à la diapositive suivante toutes les 3 secondes
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 30000);
 
     // Afficher la première image dès le chargement de la page
     showSlide(currentSlide);
