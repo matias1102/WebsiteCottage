@@ -259,7 +259,12 @@ button:hover {
 .carousel-container {
     position: relative;
     margin: 0 auto;
-    max-width: 600px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    
 }
 
 .carousel-slide {
@@ -267,8 +272,8 @@ button:hover {
 }
 
 .carousel-slide img {
-    width: 50%;
-    max-width: 400px;
+    width: 80%;
+    max-width: 600px;
 }
 
 #prevBtn, #nextBtn {
@@ -285,9 +290,9 @@ button:hover {
 }
 
 #prevBtn {
-    left: 10%;
+    left: 1%;
 }
 
 #nextBtn {
-    left: 80%;
+    left: 93%;
 }
