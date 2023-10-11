@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,7 +22,7 @@
             <h1>Figuiès</h1>
         </div>
         <div>
-            <a href="../Website/connexion.html" id="btn-connexion">Connexion</a>
+            <a href="../Website/connexion.php" id="btn-connexion">Connexion</a>
         </div>
     </header>
 

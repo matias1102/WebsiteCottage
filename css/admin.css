@@ -1,8 +1,12 @@
 /* Styles pour l'en-tête */
 header {
-    background-color: #53B7FF ; /* Couleur de fond de l'en-tête */
-    padding: 10px 0; /* Espacement intérieur */
-    text-align: center; /* Centre le contenu horizontalement */
+    margin: 0;
+    background-color: #53B7FF; /* Couleur de fond de l'en-tête */
+    padding: 1%; /* Espacement intérieur */
+    display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
+    flex-direction: row;
+    justify-content: space-between; /* Espacez les éléments horizontalement */
+    align-items: center; /* Alignez verticalement au centre */
     color: white; /* Couleur du texte blanc */
 }
 
@@ -10,7 +14,6 @@ header {
 .header-content {
     display: flex; /* Utiliser Flexbox pour centrer les éléments horizontalement */
     align-items: center; /* Aligner verticalement au centre */
-    justify-content: center; /* Centrer horizontalement */
 }
 
 /* Styles pour le logo */
@@ -22,8 +25,20 @@ header img {
 
 /* Styles pour le nom du gîte */
 header h1 {
-    font-size: 24px; /* Taille de police du nom du gîte */
-    margin: 0; /* Supprimer les marges par défaut */
+    font-size: 40px; /* Taille de police du nom du gîte */
+    margin: 0; /* Supprimez les marges par défaut */
+}
+
+/* Styles pour le bouton de connexion */
+#btn-deco {
+    background-color: #0c04a8; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement intérieur du bouton */
+    border: none; /* Supprimez la bordure */
+    border-radius: 4px; /* Ajoutez des coins arrondis */
+    cursor: pointer; /* Curseur pointeur */
+    font-weight: bold; /* Police en gras */
+    /* Supprimez cette ligne pour permettre la séparation des éléments horizontalement */
 }
 
 /* Styles pour le conteneur principal (body) */

@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+// Vérifiez si l'utilisateur est authentifié, sinon redirigez-le vers la page de connexion
+if (!isset($_SESSION['authentifie']) || $_SESSION['authentifie'] !== true) {
+    header('Location: connexion.php');
+    exit;
+}
+
+// Vérifiez si le bouton de déconnexion a été cliqué
+if (isset($_POST['deconnexion'])) {
+    // Détruisez la session et redirigez vers la page de connexion
+    session_destroy();
+    header('Location: connexion.php');
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,10 +29,15 @@
 <body>
     <!-- En-tête avec le logo -->
     <header>
-        <div class="header-content">
+        <div>
             <img src="../image/LOGO.png" alt="Logo du Gîte">
+        </div>
+        <div class="header-content">
             <h1>Figuiès</h1>
         </div>
+        <form method="post">
+            <button type="submit" name="deconnexion" id=btn-deco>Déconnexion</button>
+        </form>
     </header>
 
     <!-- Barre de navigation de la page d'administration -->
