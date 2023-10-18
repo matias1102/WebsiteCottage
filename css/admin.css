@@ -89,18 +89,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-form {
-    text-align: center;
-}
-
-textarea, input[type="text"], input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
 button[type="submit"] {
     background-color: #53B7FF;
     color: #fff;
@@ -115,3 +103,61 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0A3D91;
 }
+
+/* Styles pour les sections de modification */
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les informations de contact */
+section form p {
+    width: 100%;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour "adresse :" */
+section form p label {
+    flex: 1; /* Utilisation de flexbox pour aligner "adresse :" à gauche */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Styles pour le champ de saisie (input) */
+section form p input[type="text"] {
+    flex: 3; /* Utilisation de flexbox pour aligner le champ de saisie à droite */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 32px; /* Réduire la taille de la police du placeholder */
+}
+
+/* Styles pour le placeholder */
+section form p input[type="text"]::placeholder {
+    font-size: 30px; /* Réduire davantage la taille de la police du placeholder */
+    color: #999; /* Couleur du placeholder */
+}
+
+
+/* Styles pour la zone de description */
+section form textarea {
+    width: 100%;
+    height: 200px; /* Ajustez la hauteur selon vos préférences pour agrandir la zone de description */
+    padding: 10px;
+    font-size: 18px; /* Ajustez la taille de la police selon vos préférences */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Styles pour le placeholder de la zone de description */
+section form textarea::placeholder {
+    font-size: 16px; /* Ajustez la taille de la police du placeholder selon vos préférences */
+    color: #999; /* Couleur du placeholder */
+}
+
