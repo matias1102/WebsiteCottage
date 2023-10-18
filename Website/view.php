@@ -30,7 +30,7 @@
     <!-- Barre de navigation -->
     <nav>
         <ul>
-            <li><a href="../Website/view.html">Accueil</a></li>
+            <li><a href="../Website/view.php">Accueil</a></li>
             <li><a href="#galerie">Galerie</a></li>
             <li><a href="#description">Description</a></li>
             <li><a href="#carte">Localisation</a></li>
