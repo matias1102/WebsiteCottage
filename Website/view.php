@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="../Js/navbar.js"></script>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+    <script src="../Js/calendar.js"></script>
 </head>
 <body>
     <!-- En-tête avec le logo, le nom du gîte et le bouton de connexion -->
