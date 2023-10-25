@@ -1,3 +1,15 @@
+<?php
+    include 'config.php'; // Inclure votre fichier de configuration de la base de données
+    // Récupérez la description
+    $sqlDescription = "SELECT description FROM site_info";
+    $stmtDescription = $pdo->query($sqlDescription);
+    $description = $stmtDescription->fetch(PDO::FETCH_ASSOC);
+
+    // Récupérez les informations de contact
+    $sqlContact = "SELECT address, phone, email, facebook FROM site_info";
+    $stmtContact = $pdo->query($sqlContact);
+    $contactInfo = $stmtContact->fetch(PDO::FETCH_ASSOC);
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,10 +24,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="../Js/navbar.js"></script>
-
-
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
-    <script src="../Js/calendar.js"></script>
 </head>
 <body>
     <!-- En-tête avec le logo, le nom du gîte et le bouton de connexion -->
@@ -51,19 +59,25 @@
 
     
     <section id="galerie">
-        <div class="carousel-container">
-            <button id="prevBtn">&#10094;</button>
-            <div class="carousel-slide">
-                <img src="../image/image1.jpg" alt="Image 1">
-            </div>
-            <div class="carousel-slide">
-                <img src="../image/image2.jpg" alt="Image 2">
-            </div>
-            <div class="carousel-slide">
-                <img src="../image/image3.jpg" alt="Image 3">
-            </div>
-            <button id="nextBtn">&#10095;</button>
-        </div>
+    <div class="carousel-container">
+        <button id="prevBtn">&#10094;</button>
+        <?php
+        // Inclure votre fichier de configuration de la base de données
+        include 'config.php';
+
+        // Récupérer les images de la base de données
+        $sqlImages = "SELECT * FROM photos";
+        $stmtImages = $pdo->query($sqlImages);
+        $images = $stmtImages->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($images as $index => $image) {
+            echo '<div class="carousel-slide' . ($index === 0 ? ' active' : '') . '">';
+            echo '<img src="../image/' . $image['file_name'] . '" alt="Image ' . ($index + 1) . '">';
+            echo '</div>';
+        }
+        ?>
+        <button id="nextBtn">&#10095;</button>
+    </div>
     </section>
     
     <section id="description">
@@ -72,41 +86,8 @@
             <div class="property-name">
                 Figuiès
             </div>
-            <div class="property-price">
-                <i class="fas fa-euro-sign"></i> À partir de 550€ / semaine
-            </div>
             <div class="property-description">
-                Notre maison en pierre, située sur les hauteurs, entre vignes, falaises et le causse vous séduira par sa vue magnifique et son environnement agréable.
-            </div>
-            <div class="property-capacity">
-                <strong>CAPACITÉ</strong><br>
-                <i class="fas fa-users"></i> Personne : 4<br>
-                <i class="fas fa-bed"></i> Chambre : 2<br>
-                <i class="fas fa-users"></i> Personne (maximum) : 4
-            </div>
-            <div class="property-amenities">
-                <strong>ÉQUIPEMENTS ET SERVICES</strong><br>
-                <i class="fas fa-paw"></i> Animaux acceptés<br>
-                <i class="fas fa-car"></i> Parking<br>
-                <i class="fas fa-sun"></i> Terrasse<br>
-                <i class="fas fa-tv"></i> Télévision
-            </div>
-            <div class="property-languages">
-                <strong>LANGUES</strong><br>
-                <i class="fas fa-language"></i> Francais
-            </div>
-            <div class="property-rates">
-                <strong>TARIFS 2023</strong><br>
-                - Semaine Moyenne saison à 550€<br>
-                - Nuitée Moyenne saison à 85€<br>
-                - Semaine Haute Saison à 650€<br>
-                - Nuitée Haute Saison à 110€
-            </div>
-            <div class="property-payment">
-                <strong>MOYENS DE PAIEMENT</strong><br>
-                <i class="fas fa-money-check-alt"></i> Chèque<br>
-                <i class="fas fa-money-bill-wave"></i> Espèce<br>
-                <i class="fas fa-exchange-alt"></i> Virements
+                <?php echo $description['description']; ?>
             </div>
         </div>
     </section>    
@@ -125,11 +106,11 @@
         <h2>Contactez-nous</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <p><strong>Adresse :</strong> 140 rue de Figuiès 12330 Salles-la-Source</p>
-                <p><strong>Téléphone :</strong> +33(0) 6 41 57 73 20</p>
-                <p><strong>Email :</strong> beatrice.boyer29@orange.fr</p>
-                <p><strong>Facebook :</strong> <a href="https://www.facebook.com/gitefiguies" target="_blank">Gîte Figuiès</a></p>
-
+                <!-- Utilisez les informations de contact récupérées depuis la base de données -->
+                <p><strong>Adresse :</strong> <?php echo $contactInfo['address']; ?></p>
+                <p><strong>Téléphone :</strong> <?php echo $contactInfo['phone']; ?></p>
+                <p><strong>Email :</strong> <?php echo $contactInfo['email']; ?></p>
+                <p><strong>Facebook :</strong> <a href="<?php echo $contactInfo['facebook']; ?>" target="_blank">Gîte Figuiès</a></p>
             </div>
         </div>
     </section>

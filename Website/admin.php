@@ -15,16 +15,6 @@ if (isset($_POST['deconnexion'])) {
 // Inclure votre fichier de configuration de base de données
 include 'config.php';
 
-// Gérer la modification des photos
-if (isset($_POST['upload_photo'])) {
-    // Gérez ici le téléchargement et l'ajout de nouvelles photos dans la base de données
-    // Assurez-vous de valider les fichiers et de les stocker correctement
-
-    // Redirigez après l'ajout des photos
-    header('Location: admin.php');
-    exit();
-}
-
 // Gérer la modification de la description
 if (isset($_POST['update_description'])) {
     $newDescription = $_POST['new_description'];
@@ -61,27 +51,26 @@ if (isset($_POST['update_contact'])) {
     exit();
 }
 
-// Récupérez les photos depuis la base de données
-$sql = "SELECT * FROM photos";
-$stmt = $pdo->query($sql);
-$photos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 // Récupérez la description et les informations de contact depuis la base de données
 $sql = "SELECT * FROM site_info";
 $stmt = $pdo->query($sql);
 $info = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Admin Page</title>
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
+
 <body>
     <header>
         <div>
-            <img src="../image/LOGO.png" alt="Logo du Gîte"></div>
+            <img src="../image/LOGO.png" alt="Logo du Gîte">
+        </div>
         <div class="header-content">
             <h1>Figuiès</h1>
         </div>
@@ -90,28 +79,47 @@ $info = $stmt->fetch(PDO::FETCH_ASSOC);
         </form>
     </header>
 
-    <h1>Liste des Photos</h>
+    <h1>Liste des Photos</h1>
     <ul>
-        <?php foreach ($photos as $photo): ?>
-            <li>
-                <!-- Afficher les photos et les options de suppression -->
-                <img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>">
-                <a href="delete_photo.php?id=<?php echo $photo['id']; ?>">Supprimer</a>
-            </li>
-        <?php endforeach; ?>
+    <?php
+    // Get images from the database
+    $query = $pdo->query("SELECT * FROM photos ORDER BY id DESC");
+
+    if ($query->rowCount() > 0) {
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+            $imageURL = '../image/' . $row["file_name"];
+            $imageID = $row["id"]; // Récupérer l'ID de l'image
+
+            echo '<li class="image-container">';
+            echo '<img class="preview" src="' . $imageURL . '" alt="" />';
+            echo '<div class="button-container">';
+            echo '<a class="delete-button" href="delete_photo.php?id=' . $imageID . '">Supprimer</a>';
+            echo '</div>';
+            echo '</li>';
+        }
+    } else {
+        echo '<p>No image(s) found...</p>';
+    }
+    ?>
     </ul>
+
+
+
+
     <h1>ajouter des Photos</h1>
-    <form method="post" enctype="multipart/form-data">
-        <!-- Ajouter de nouvelles photos -->
-        <input type="file" name="new_photos[]" multiple>
-        <input type="submit" name="upload_photo" value="Ajouter des photos">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <!-- Select Image File to Upload: -->
+        <input type="file" name="file">
+        <input type="submit" name="submit" value="Upload">
     </form>
-    
+
 
     <h1>Modifier la Description</h1>
     <form method="post">
         <!-- Modifier la description -->
-        <textarea name="new_description"><?php echo $info['description']; ?></textarea>
+        <div>
+            <textarea name="new_description"><?php echo $info['description']; ?></textarea>
+        </div>
         <input type="submit" name="update_description" value="Mettre à jour la description">
     </form>
 
@@ -133,4 +141,5 @@ $info = $stmt->fetch(PDO::FETCH_ASSOC);
         <input type="submit" name="update_contact" value="Mettre à jour les informations de contact">
     </form>
 </body>
+
 </html>

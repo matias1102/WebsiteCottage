@@ -29,24 +29,17 @@ header h1 {
     margin: 0; /* Supprimez les marges par défaut */
 }
 
-/* Styles pour le bouton de connexion */
-#btn-deco {
-    background-color: #0c04a8; /* Couleur du bouton */
-    color: white; /* Couleur du texte */
-    padding: 10px 20px; /* Espacement intérieur du bouton */
-    border: none; /* Supprimez la bordure */
-    border-radius: 4px; /* Ajoutez des coins arrondis */
-    cursor: pointer; /* Curseur pointeur */
-    font-weight: bold; /* Police en gras */
-    /* Supprimez cette ligne pour permettre la séparation des éléments horizontalement */
-}
 
 /* Styles pour le conteneur principal (body) */
 body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Ajout de la propriété text-align: center */
 }
+
 
 /* Styles pour la barre de navigation de la page d'administration */
 nav {
@@ -81,6 +74,8 @@ section {
     margin: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    
 }
 
 h2 {
@@ -90,7 +85,7 @@ h2 {
 }
 
 button[type="submit"] {
-    background-color: #53B7FF;
+    background-color: #0c04a8;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -116,6 +111,7 @@ section {
 /* Styles pour les informations de contact */
 section form p {
     width: 100%;
+    margin: 20px;
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -146,18 +142,50 @@ section form p input[type="text"]::placeholder {
 
 /* Styles pour la zone de description */
 section form textarea {
-    width: 100%;
-    height: 200px; /* Ajustez la hauteur selon vos préférences pour agrandir la zone de description */
-    padding: 10px;
+    width: 80%; /* Largeur de 80% de la largeur de l'écran */
+    height: 300px; /* Hauteur fixe en pixels (ajustez selon vos besoins) */
+    padding: 10px; /* Espacement intérieur pour le contenu texte */
     font-size: 18px; /* Ajustez la taille de la police selon vos préférences */
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 10px;
 }
 
+
 /* Styles pour le placeholder de la zone de description */
 section form textarea::placeholder {
     font-size: 16px; /* Ajustez la taille de la police du placeholder selon vos préférences */
     color: #999; /* Couleur du placeholder */
 }
+
+/* Styles pour les conteneurs d'image */
+.image-container {
+    display: inline-block;
+    text-align: center;
+    margin: 10px; /* Espace entre les images */
+}
+
+/* Styles pour les boutons de suppression */
+.button-container {
+    text-align: center;
+}
+
+.delete-button {
+    background-color: #fff;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+/* Changer la couleur du texte en noir */
+.preview {
+    max-width: 200px; /* Limitez la largeur à 200 pixels */
+    height: auto; /* Hauteur proportionnelle */
+    color: black; /* Changer la couleur du texte en noir */
+}
+
 
