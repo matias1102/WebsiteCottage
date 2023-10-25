@@ -138,6 +138,21 @@ a {
     margin-bottom: 500px; /* Ajoutez une marge basse équivalente à la hauteur de la carte */
 }
 
+#calendrier {
+    text-align: center;
+    position: relative;
+    margin-bottom: 500px; /* Ajoutez une marge basse équivalente à la hauteur de la carte */
+}
+
+#calendar {
+    width: 600px; /* Définir la largeur de la carte */
+    height: 400px; /* Définir la hauteur de la carte */
+    position: absolute; /* Position absolue par rapport au parent */
+    left: 50%; /* Centrer horizontalement au milieu de la page */
+    transform: translateX(-50%); /* Ajuster la position horizontale au milieu */
+    border: 1px solid #ccc; /* Ajouter une bordure pour la carte (optionnel) */
+}
+
 #map {
     width: 600px; /* Définir la largeur de la carte */
     height: 400px; /* Définir la hauteur de la carte */
