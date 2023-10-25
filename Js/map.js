@@ -14,7 +14,7 @@ function initMap() {
         minZoom: 6,
         maxZoom: 20
     }).addTo(macarte);
-    }
+    }  
     window.onload = function(){
 	// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 	initMap(); 
