@@ -1,9 +1,9 @@
 <?php
     include 'config.php'; // Inclure votre fichier de configuration de la base de données
     // Récupérez la description
-    $sqlDescription = "SELECT description FROM site_info";
+    $sqlDescription = "SELECT description, price, bedrooms, max_capacity, language, rates, payment_methods FROM site_info";
     $stmtDescription = $pdo->query($sqlDescription);
-    $description = $stmtDescription->fetch(PDO::FETCH_ASSOC);
+    $info = $stmtDescription->fetch(PDO::FETCH_ASSOC);
 
     // Récupérez les informations de contact
     $sqlContact = "SELECT address, phone, email, facebook FROM site_info";
@@ -84,16 +84,37 @@
     </section>
     
     <section id="description">
-        <h2>Description</h2>
-        <div class="property-info">
-            <div class="property-name">
-                Figuiès
-            </div>
-            <div class="property-description">
-                <?php echo $description['description']; ?>
-            </div>
+    <h2>Description</h2>
+    <div class="property-info">
+        <div class="property-name">
+            Figuiès
         </div>
-    </section>    
+        <div class="property-description">
+            </i> <?php echo $info['description']; ?>
+        </div>
+        <div class="property-price">
+            <i class="fas fa-euro-sign"></i> À partir de <?php echo $info['price']; ?>€ / semaine
+        </div>
+        <div class="property-capacity">
+            <strong>CAPACITÉ</strong><br>
+            <i class="fas fa-bed"></i> Chambre : <?php echo $info['bedrooms']; ?><br>
+            <i class="fas fa-users"></i> Personne (maximum) : <?php echo $info['max_capacity']; ?>
+        </div>
+        <div class="property-languages">
+            <strong>LANGUES</strong><br>
+            <i class="fas fa-language"></i> <?php echo $info['language']; ?>
+        </div>
+        <div class="property-rates">
+            <strong>TARIFS 2023</strong><br>
+            <?php echo nl2br($info['rates']); ?>
+        </div>
+        <div class="property-payment">
+            <strong>MOYENS DE PAIEMENT</strong><br>
+            <?php echo nl2br($info['payment_methods']); ?>
+        </div>
+    </div>
+</section>
+   
 
     <section id="calendrier">
         <h2>Calendrier</h2>

@@ -15,6 +15,11 @@ if (isset($_POST['deconnexion'])) {
 // Inclure votre fichier de configuration de base de données
 include 'config.php';
 
+// Récupérez les informations du site depuis la base de données
+$sqlInfo = "SELECT description, price, bedrooms, max_capacity, language, rates, payment_methods, address, phone, email, facebook FROM site_info";
+$stmtInfo = $pdo->query($sqlInfo);
+$info = $stmtInfo->fetch(PDO::FETCH_ASSOC);
+
 // Gérer la modification de la description
 if (isset($_POST['update_description'])) {
     $newDescription = $_POST['new_description'];
@@ -51,10 +56,30 @@ if (isset($_POST['update_contact'])) {
     exit();
 }
 
-// Récupérez la description et les informations de contact depuis la base de données
-$sql = "SELECT * FROM site_info";
-$stmt = $pdo->query($sql);
-$info = $stmt->fetch(PDO::FETCH_ASSOC);
+if (isset($_POST['update_info'])) {
+    $newDescription = $_POST['new_description'];
+    $newPrice = $_POST['new_price'];
+    $newBedrooms = $_POST['new_bedrooms'];
+    $newMaxCapacity = $_POST['new_max_capacity'];
+    $newLanguage = $_POST['new_language'];
+    $newRates = $_POST['new_rates'];
+    $newPaymentMethods = $_POST['new_payment_methods'];
+
+    $sql = "UPDATE site_info SET description = :description, price = :price, bedrooms = :bedrooms, max_capacity = :max_capacity, language = :language, rates = :rates, payment_methods = :payment_methods";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':description', $newDescription, PDO::PARAM_STR);
+    $stmt->bindParam(':price', $newPrice, PDO::PARAM_STR);
+    $stmt->bindParam(':bedrooms', $newBedrooms, PDO::PARAM_INT);
+    $stmt->bindParam(':max_capacity', $newMaxCapacity, PDO::PARAM_INT);
+    $stmt->bindParam(':language', $newLanguage, PDO::PARAM_STR);
+    $stmt->bindParam(':rates', $newRates, PDO::PARAM_STR);
+    $stmt->bindParam(':payment_methods', $newPaymentMethods, PDO::PARAM_STR);
+    $stmt->execute();
+
+    header('Location: admin.php');
+    exit();
+}
+
 
 ?>
 
@@ -114,13 +139,38 @@ $info = $stmt->fetch(PDO::FETCH_ASSOC);
     </form>
 
 
-    <h1>Modifier la Description</h1>
-    <form method="post">
-        <!-- Modifier la description -->
-        <div>
-            <textarea name="new_description"><?php echo $info['description']; ?></textarea>
-        </div>
-        <input type="submit" name="update_description" value="Mettre à jour la description">
+    <h1>Modifier les Informations</h1>
+<form method="post">
+    <!-- Modifier la description -->
+    <div>
+        <label>Description :</label>
+        <textarea name="new_description"><?php echo $info['description']; ?></textarea>
+    </div>
+    <div>
+        <label>Prix :</label>
+        <input type="text" name="new_price" value="<?php echo $info['price']; ?>">
+    </div>
+    <div>
+        <label>Nombre de chambres :</label>
+        <input type="number" name="new_bedrooms" value="<?php echo $info['bedrooms']; ?>">
+    </div>
+    <div>
+        <label>Personne (maximum) :</label>
+        <input type="number" name="new_max_capacity" value="<?php echo $info['max_capacity']; ?>">
+    </div>
+    <div>
+        <label>Langues :</label>
+        <input type="text" name="new_language" value="<?php echo $info['language']; ?>">
+    </div>
+    <div>
+        <label>Tarifs :</label>
+        <textarea name="new_rates"><?php echo $info['rates']; ?></textarea>
+    </div>
+    <div>
+        <label>Moyens de paiement :</label>
+        <textarea name="new_payment_methods"><?php echo $info['payment_methods']; ?></textarea>
+    </div>
+    <input type="submit" name="update_info" value="Mettre à jour les informations">
     </form>
 
     <h1>Modifier les Informations de Contact</h1>

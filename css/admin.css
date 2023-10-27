@@ -34,7 +34,7 @@ header h1 {
 body {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-image: url('../image/image4.jpeg');
     align-items: center;
     justify-content: center;
     text-align: center; /* Ajout de la propriété text-align: center */
