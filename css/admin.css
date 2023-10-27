@@ -188,4 +188,10 @@ section form textarea::placeholder {
     color: black; /* Changer la couleur du texte en noir */
 }
 
-
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px; /* Ajoutez la marge au-dessus du footer */
+    padding: 10px; /* Ajoutez un espace intérieur au footer si nécessaire */
+}

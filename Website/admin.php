@@ -142,4 +142,9 @@ $info = $stmt->fetch(PDO::FETCH_ASSOC);
     </form>
 </body>
 
+<footer>
+        <!-- Adresse du gîte -->
+        Gites Figuies © 2023
+</footer>
+
 </html>

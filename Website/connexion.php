@@ -87,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Pied de page (peut être le même que sur les autres pages) -->
     <footer>
         <!-- Adresse du gîte -->
+        Gites Figuies © 2023
     </footer>
 </body>
 </html>

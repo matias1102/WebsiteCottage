@@ -54,6 +54,16 @@ body {
 
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px; /* Ajoutez la marge au-dessus du footer */
+    padding: 10px; /* Ajoutez un espace intérieur au footer si nécessaire */
+}
+
+
+
 
 
 
@@ -177,7 +187,7 @@ a {
 
 /* Styles pour la page de connexion */
 #connexion {
-    background-color: #fff;
+    
     padding: 20px;
     text-align: center;
     position: relative; /* Ajoutez une position relative pour centrer le bouton */

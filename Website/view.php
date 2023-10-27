@@ -121,6 +121,7 @@
     <!-- Pied de page -->
     <footer>
         <!-- Adresse du gîte -->
+        Gites Figuies © 2023
     </footer>
 
     <!-- JavaScript pour la gestion AJAX -->
