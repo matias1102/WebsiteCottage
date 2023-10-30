@@ -74,7 +74,8 @@
             echo '</div>';
         }
         ?>
-        <button id="nextBtn">&#10095;</button>
+        <button id="prevBtn">&#10096;</button>
+        <button id="nextBtn">&#10097;</button>
     </section>
 
     
