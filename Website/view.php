@@ -16,19 +16,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Web du Gîte</title>
-    <!-- Ajoutez ici vos mots-clés pour le référencement (balise meta) -->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <!-- Inclure la bibliothèque Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="../Js/navbar.js"></script>
-
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
     <script src="../Js/calendar.js"></script>
+    <script src="../Js/caroussel.js"></script>
+    <script src="../Js/map.js"></script>
 </head>
 <body>
+    
     <!-- En-tête avec le logo, le nom du gîte et le bouton de connexion -->
     <header>
         <div>
@@ -36,11 +35,7 @@
         <div class="header-content">
             <h1>Figuiès</h1>
         </div>
-        <div>
-           
-        </div>
     </header>
-
 
     <!-- Barre de navigation -->
     <nav>
@@ -51,9 +46,9 @@
             <li><a href="#calendrier">Calendrier</a></li>
             <li><a href="#carte">Localisation</a></li>
             <li><a href="#contact">Contact</a></li>
-            
         </ul>
     </nav>
+
 
     <!-- Page d'accueil -->
     <section id="accueil">
@@ -62,26 +57,28 @@
 
     
     <section id="galerie">
-    <div class="carousel-container">
+        <div class="carousel-container">
+            
+            <?php
+            // Inclure votre fichier de configuration de la base de données
+            include 'config.php';
+
+            // Récupérer les images de la base de données
+            $sqlImages = "SELECT * FROM photos";
+            $stmtImages = $pdo->query($sqlImages);
+            $images = $stmtImages->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($images as $index => $image) {
+                echo '<div class="carousel-slide' . ($index === 0 ? ' active' : '') . '">';
+                echo '<img src="../image/' . $image['file_name'] . '" alt="Image ' . ($index + 1) . '">';
+                echo '</div>';
+            }
+            ?>
+        </div>
         <button id="prevBtn">&#10094;</button>
-        <?php
-        // Inclure votre fichier de configuration de la base de données
-        include 'config.php';
-
-        // Récupérer les images de la base de données
-        $sqlImages = "SELECT * FROM photos";
-        $stmtImages = $pdo->query($sqlImages);
-        $images = $stmtImages->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($images as $index => $image) {
-            echo '<div class="carousel-slide' . ($index === 0 ? ' active' : '') . '">';
-            echo '<img src="../image/' . $image['file_name'] . '" alt="Image ' . ($index + 1) . '">';
-            echo '</div>';
-        }
-        ?>
         <button id="nextBtn">&#10095;</button>
-    </div>
     </section>
+
     
     <section id="description">
     <h2>Description</h2>
@@ -144,10 +141,6 @@
         <!-- Adresse du gîte -->
         Gites Figuies © 2023
     </footer>
-
-    <!-- JavaScript pour la gestion AJAX -->
-    <script src="../Js/caroussel.js"></script>
-    <script src="../Js/map.js"></script>
    
 
 </body>
