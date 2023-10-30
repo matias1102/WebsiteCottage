@@ -68,14 +68,12 @@
             $stmtImages = $pdo->query($sqlImages);
             $images = $stmtImages->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($images as $index => $image) {
-                echo '<div class="carousel-slide' . ($index === 0 ? ' active' : '') . '">';
-                echo '<img src="../image/' . $image['file_name'] . '" alt="Image ' . ($index + 1) . '">';
-                echo '</div>';
-            }
-            ?>
-        </div>
-        <button id="prevBtn">&#10094;</button>
+        foreach ($images as $index => $image) {
+            echo '<div class="carousel-slide' . ($index === 0 ? ' active' : '') . '">';
+            echo '<img src="../image/' . $image['file_name'] . '" alt="Image ' . ($index + 1) . '" loading="lazy">';
+            echo '</div>';
+        }
+        ?>
         <button id="nextBtn">&#10095;</button>
     </section>
 
