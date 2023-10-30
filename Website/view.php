@@ -75,7 +75,7 @@
 
         foreach ($images as $index => $image) {
             echo '<div class="carousel-slide' . ($index === 0 ? ' active' : '') . '">';
-            echo '<img src="../image/' . $image['file_name'] . '" alt="Image ' . ($index + 1) . '">';
+            echo '<img src="../image/' . $image['file_name'] . '" alt="Image ' . ($index + 1) . '" loading="lazy" >';
             echo '</div>';
         }
         ?>
