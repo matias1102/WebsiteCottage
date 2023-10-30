@@ -1,6 +1,9 @@
 header { 
     margin: 0;
-    background-color: #53B7FF; /* Couleur de fond de l'en-tête */
+    background-image: url('../image/back1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 1%; /* Espacement intérieur */
     display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
     flex-direction: row;
@@ -36,7 +39,7 @@ header h1 {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../image/image4.jpeg');
+    background-image: url('../image/back1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -60,7 +63,10 @@ footer {
 nav {
     position: fixed; /* Fixe la navbar en haut de l'écran */
     top: 0; /* Place la navbar au bord supérieur de l'écran */
-    background-color: #53B7FF; /* Nouvelle couleur de fond bleu */
+    background-image: url('../image/back1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 15px 0; /* Espacement intérieur */
     margin: 0;
     text-align: center; /* Centre le contenu horizontalement */
@@ -219,7 +225,6 @@ input[type="password"] {
 }
 
 button {
-    background-color: #53B7FF;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -232,9 +237,6 @@ button {
     margin-top: 20px; /* Ajoute une marge au-dessus du bouton pour l'espacer */
 }
 
-button:hover {
-    background-color: #0A3D91; /* Couleur au survol */
-}
 
 
 
@@ -246,7 +248,6 @@ button:hover {
 
 
 #contact {
-    /*background-color: #f9f9f9;*/
     padding: 20px;
     text-align: center;
 }
@@ -305,7 +306,6 @@ button:hover {
     transform: translateY(-50%);
     font-size: 24px;
     color: #333;
-    background-color: rgba(255, 255, 255, 0.8);
     border: none;
     cursor: pointer;
 }
