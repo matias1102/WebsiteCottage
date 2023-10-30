@@ -37,7 +37,7 @@
             <h1>Figuiès</h1>
         </div>
         <div>
-            <a href="../Website/connexion.php" id="btn-connexion">Connexion</a>
+           
         </div>
     </header>
 
