@@ -1,19 +1,17 @@
-/* Styles pour l'en-tête */
-header {
+header { 
     margin: 0;
     background-color: #53B7FF; /* Couleur de fond de l'en-tête */
     padding: 1%; /* Espacement intérieur */
     display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
     flex-direction: row;
-    justify-content: space-between; /* Espacez les éléments horizontalement */
+    justify-content: center; /* Centrez horizontalement les éléments dans l'en-tête */
     align-items: center; /* Alignez verticalement au centre */
     color: white; /* Couleur du texte blanc */
 }
 
 /* Styles pour le conteneur du contenu de l'en-tête */
 .header-content {
-    display: flex; /* Utiliser Flexbox pour centrer les éléments horizontalement */
-    align-items: center; /* Aligner verticalement au centre */
+    text-align: center; /* Centrez le texte horizontalement */
 }
 
 /* Styles pour le logo */
@@ -21,6 +19,7 @@ header img {
     max-width: 100px; /* Définir la largeur maximale du logo */
     height: auto; /* Hauteur automatique proportionnelle */
     margin-right: 10px; /* Espacement entre le logo et le nom du gîte */
+    flex-shrink: 0; /* Empêche le logo de réduire sa taille */
 }
 
 /* Styles pour le nom du gîte */
@@ -29,17 +28,7 @@ header h1 {
     margin: 0; /* Supprimez les marges par défaut */
 }
 
-/* Styles pour le bouton de connexion */
-#btn-connexion {
-    background-color: #0c04a8; /* Couleur du bouton */
-    color: white; /* Couleur du texte */
-    padding: 10px 20px; /* Espacement intérieur du bouton */
-    border: none; /* Supprimez la bordure */
-    border-radius: 4px; /* Ajoutez des coins arrondis */
-    cursor: pointer; /* Curseur pointeur */
-    font-weight: bold; /* Police en gras */
-    /* Supprimez cette ligne pour permettre la séparation des éléments horizontalement */
-}
+
 
 
 
@@ -76,8 +65,8 @@ nav {
     margin: 0;
     text-align: center; /* Centre le contenu horizontalement */
     width: 100%; /* Occupe toute la largeur de l'écran */
-    z-index: 1000; /* Augmentez la valeur du z-index pour mettre la navbar au premier plan */
     transition: background-color 0.3s ease; /* Animation de transition de couleur */
+    z-index: 1000; /* Valeur supérieure à celle du header */
 }
 
 /* ... Autres styles pour ul, li, a, etc. ... */
@@ -282,8 +271,8 @@ button:hover {
 
 #galerie {
     text-align: center;
-    
     padding: 20px;
+
 }
 
 .carousel-container {
@@ -292,8 +281,8 @@ button:hover {
     width: flex;
     height: flex;
     display: flex;
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -304,13 +293,15 @@ button:hover {
 .carousel-slide img {
     width: 80%;
     max-width: 600px;
+    height: 100%;
+    max-height: 450px;
 }
 
 #prevBtn, #nextBtn {
     width: 40px;
     height: 60px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     font-size: 24px;
     color: #333;
@@ -320,9 +311,9 @@ button:hover {
 }
 
 #prevBtn {
-    left: 1%;
+    left: 25%;
 }
 
 #nextBtn {
-    left: 93%;
+    left: 72%;
 }

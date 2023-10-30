@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
     prevButton.addEventListener('click', prevSlide);
     nextButton.addEventListener('click', nextSlide);
 
-    
 
     // Afficher la première image dès le chargement de la page
     showSlide(currentSlide);
