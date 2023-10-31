@@ -299,20 +299,26 @@ button {
 
 #prevBtn, #nextBtn {
     width: 40px;
-    height: 60px;
+    height: 40px; /* Ajustez la hauteur pour rendre les boutons ronds */
     position: absolute;
-    top: 55%;
+    top: 50%; /* Réglé à 50% pour centrer verticalement */
+    left: 0; /* Ajoutez un padding aux flèches pour les centrer horizontalement */
     transform: translateY(-50%);
     font-size: 24px;
     color: #333;
     border: none;
     cursor: pointer;
+    border-radius: 50%; /* Rend les boutons ronds */
+    text-align: center; /* Centre le contenu horizontalement */
+    line-height: 20px; /* Centre le contenu verticalement */
 }
 
 #prevBtn {
     left: 25%;
+    padding-left: 12px;
 }
 
 #nextBtn {
     left: 72%;
+    padding-left: 18px;
 }
