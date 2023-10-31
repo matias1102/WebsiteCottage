@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="../Js/navbar.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
@@ -31,7 +32,7 @@
     <!-- En-tête avec le logo, le nom du gîte et le bouton de connexion -->
     <header>
         <div>
-            <img src="../image/LOGO.png" alt="Logo du Gîte"></div>
+            <img src="../image/LOGO.webp" alt="Logo du Gîte" loading="lazy"></div>
         <div class="header-content">
             <h1>Figuiès</h1>
         </div>
