@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+    var calendarEl = document.getElementById('admin-calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
-        events: 'get_events.php', // Charger les événements depuis le fichier PHP,
+        events: 'get_events.php', // Charger les événements depuis le fichier PHP
         selectable: true,
         eventClick: function(info) {
             var date = info.event.startStr;
@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Configurez les actions pour les boutons
             document.getElementById('availableButton').addEventListener('click', function() {
+                // Utilisez une requête AJAX pour envoyer les données au backend
                 updateEventState(date, 'disponible');
             });
 
             document.getElementById('unavailableButton').addEventListener('click', function() {
+                // Utilisez une requête AJAX pour envoyer les données au backend
                 updateEventState(date, 'indisponible');
             });
         },
@@ -27,14 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour mettre à jour l'état de l'événement en base de données
     function updateEventState(date, state) {
-        // Effectuer une requête AJAX pour mettre à jour l'état
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'update_event.php', true);
+        xhr.open('POST', 'save_state.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // Gérer la réponse du serveur ici (par exemple, afficher un message de confirmation)
-                alert('État mis à jour avec succès !');
+                alert(xhr.responseText);
                 // Cachez à nouveau les boutons après la mise à jour
                 document.getElementById('buttons').style.display = 'none';
                 // Rechargez le calendrier pour refléter le changement
@@ -44,4 +45,5 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send('date=' + date + '&state=' + state);
     }
 });
+
 

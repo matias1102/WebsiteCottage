@@ -148,19 +148,17 @@ a {
 #calendrier {
     text-align: center;
     position: relative;
-    margin-bottom: 200px; /* Ajoutez une marge basse équivalente à la hauteur de la carte */
-    width: flex;
-    height: 500px;
+    margin-bottom: 200px;
 }
 
 #calendar {
-    width: 60%; /* Définir la largeur du calendrier */
-    height: 100%; /* Définir la hauteur du calendrier */
-    position: absolute; /* Position absolue par rapport au parent */
-    left: 50%; /* Centrer horizontalement au milieu de la page */
-    transform: translateX(-50%); /* Ajuster la position horizontale au milieu */
-    border: 1px solid #ccc; /* Ajouter une bordure pour la carte (optionnel) */
+    width: 60%; /* Utilisez 100% pour que le calendrier prenne la largeur totale de son conteneur */
+    height: 500px; /* Ajustez la hauteur du calendrier selon vos besoins */
+    position: relative; /* Utilisez "relative" au lieu de "absolute" */
+    margin: 0 auto; /* Pour centrer horizontalement le calendrier */
+    margin-bottom: 20px;
 }
+
 
 #map {
     width: 80%; /* Définir la largeur de la carte */
@@ -222,22 +220,6 @@ input[type="password"] {
     border-radius: 4px;
     margin-right: 20px;
 }
-
-button {
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    position: relative; /* Ajoutez une position relative pour centrer le bouton */
-    left: 50%; /* Déplace le bouton de 50% vers la droite pour le centrer */
-    transform: translateX(-50%); /* Centre horizontalement le bouton */
-    margin-top: 20px; /* Ajoute une marge au-dessus du bouton pour l'espacer */
-}
-
-
-
 
 .form-group {
     margin-bottom: 20px;
