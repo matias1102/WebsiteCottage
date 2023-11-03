@@ -70,11 +70,9 @@ a {
 
 /* Styles pour les sections de modification */
 section {
-    background-color: #fff;
     padding: 20px;
     margin: 20px;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     
 }
@@ -102,11 +100,9 @@ button[type="submit"]:hover {
 
 /* Styles pour les sections de modification */
 section {
-    background-color: #fff;
     padding: 20px;
     margin: 20px;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Styles pour les informations de contact */
@@ -115,7 +111,6 @@ section form p {
     margin: 20px;
     padding: 20px;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Styles pour "adresse :" */
@@ -195,4 +190,21 @@ footer {
     justify-content: center;
     margin-top: 30px; /* Ajoutez la marge au-dessus du footer */
     padding: 10px; /* Ajoutez un espace intérieur au footer si nécessaire */
+}
+
+#calendrier {
+    text-align: center;
+    position: relative;
+    margin-bottom: 200px; 
+    width: flex;
+    height: 500px;
+    background: none;
+}
+
+#admin-calendar {
+    width: 60%; /* Définir la largeur du calendrier */
+    height: 100%; /* Définir la hauteur du calendrier */
+    position: absolute; /* Position absolue par rapport au parent */
+    left: 50%; /* Centrer horizontalement au milieu de la page */
+    transform: translateX(-50%); /* Ajuster la position horizontale au milieu */
 }

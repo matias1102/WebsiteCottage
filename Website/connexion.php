@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Header (peut être le même que sur les autres pages) -->
     <header>
         <div>
-            <img src="../image/LOGO.png" alt="Logo du Gîte"></div>
+            <img src="../image/LOGO.webp" alt="Logo du Gîte"></div>
         <div class="header-content">
             <h1>Figuiès</h1>
         </div>

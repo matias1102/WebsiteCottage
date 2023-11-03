@@ -89,12 +89,17 @@ if (isset($_POST['update_info'])) {
 <head>
     <title>Admin Page</title>
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <script src="../Js/calendar.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+    <script src="../Js/admin_calendar.js"></script>
+    <link href="../Website/node_modules/fullcalendar/main.css" rel="stylesheet">
+    <script src="../Website/node_modules/fullcalendar/main.js"></script>
 </head>
 
 <body>
     <header>
         <div>
-            <img src="../image/LOGO.png" alt="Logo du Gîte">
+            <img src="../image/LOGO.webp" alt="Logo du Gîte">
         </div>
         <div class="header-content">
             <h1>Figuiès</h1>
@@ -172,6 +177,16 @@ if (isset($_POST['update_info'])) {
     </div>
     <input type="submit" name="update_info" value="Mettre à jour les informations">
     </form>
+
+
+    <h1>Gérer la disponibilité</h1>
+    <section id=calendrier>
+        <div id="admin-calendar"></div>
+        <div id="buttons">
+            <button id="availableButton">Disponible</button>
+            <button id="unavailableButton">Indisponible</button>
+        </div>
+    </section>
 
     <h1>Modifier les Informations de Contact</h1>
     <form method="post">
