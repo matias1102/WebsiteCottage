@@ -10,6 +10,7 @@ header {
     color: white; /* Couleur du texte blanc */
 }
 
+
 /* Styles pour le conteneur du contenu de l'en-tête */
 .header-content {
     display: flex; /* Utiliser Flexbox pour centrer les éléments horizontalement */
