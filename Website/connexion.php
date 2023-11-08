@@ -59,9 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="header-content">
             <h1>Figuiès</h1>
         </div>
-        <div>
-            <a href="../Website/view.php" id="btn-connexion">retour</a>
-        </div>
     </header>
 
     <!-- Page de connexion -->

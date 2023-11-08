@@ -97,12 +97,19 @@
             <i class="fas fa-bed"></i> Chambre : <?php echo $info['bedrooms']; ?><br>
             <i class="fas fa-users"></i> Personne (maximum) : <?php echo $info['max_capacity']; ?>
         </div>
+        <div class="property-amenities">
+            <strong>ÉQUIPEMENTS ET SERVICES</strong><br>
+            <i class="fas fa-dog"></i> Animaux acceptés<br>
+            <i class="fas fa-car"></i> Parking<br>
+            <i class="fas fa-sun"></i> Terrasse<br>
+            <i class="fas fa-tv"></i> Télévision<br>
+        </div>
         <div class="property-languages">
             <strong>LANGUES</strong><br>
             <i class="fas fa-language"></i> <?php echo $info['language']; ?>
         </div>
         <div class="property-rates">
-            <strong>TARIFS 2023</strong><br>
+            <strong>TARIFS</strong><br>
             <?php echo nl2br($info['rates']); ?>
         </div>
         <div class="property-payment">
@@ -110,7 +117,7 @@
             <?php echo nl2br($info['payment_methods']); ?>
         </div>
     </div>
-</section>
+    </section>
    
 
     <section id="calendrier">

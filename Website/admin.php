@@ -182,12 +182,6 @@ if (isset($_POST['update_info'])) {
     <h1>Gérer la disponibilité</h1>
     <section id=calendrier>
         <div id="admin-calendar"></div>
-        <form id="updateStateForm" action="save_state.php" method="post">
-            <input type="hidden" name="date" id="dateInput">
-            <input type="hidden" name="state" id="stateInput">
-            <button type="submit" name="action" value="disponible">Disponible</button>
-            <button type="submit" name="action" value="indisponible">Indisponible</button>
-        </form>
     </section>
 
     <h1>Modifier les Informations de Contact</h1>
