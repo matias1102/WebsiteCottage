@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('admin-calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      selectable: true, // Permet la sélection de dates
+      selectable: true, 
       events: {
-        url: 'get_events.php', // Chemin vers un fichier PHP qui récupère les événements depuis la base de données
+        url: 'get_events.php',
         method: 'POST',
         extraParams: {
           custom_param: 'custom_value'
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleState(date, state) {
         // Envoie une requête AJAX pour ajouter ou supprimer l'état dans la base de données
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'toggle_state.php', true); // Utilisez le bon chemin vers votre script PHP pour ajouter ou supprimer l'état
+        xhr.open('POST', 'toggle_state.php', true); 
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
           if (xhr.readyState === 4 && xhr.status === 200) {

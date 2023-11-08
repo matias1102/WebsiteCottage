@@ -1,41 +1,33 @@
-header { 
+header {
     margin: 0;
     background-image: url('../image/back1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 1%; /* Espacement intérieur */
-    display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
+    padding: 1%;
+    display: flex;
     flex-direction: row;
-    justify-content: center; /* Centrez horizontalement les éléments dans l'en-tête */
-    align-items: center; /* Alignez verticalement au centre */
-    color: white; /* Couleur du texte blanc */
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-/* Styles pour le conteneur du contenu de l'en-tête */
 .header-content {
-    text-align: center; /* Centrez le texte horizontalement */
+    text-align: center;
 }
 
-/* Styles pour le logo */
 header img {
-    max-width: 100px; /* Définir la largeur maximale du logo */
-    height: auto; /* Hauteur automatique proportionnelle */
-    margin-right: 10px; /* Espacement entre le logo et le nom du gîte */
-    flex-shrink: 0; /* Empêche le logo de réduire sa taille */
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
+    flex-shrink: 0;
 }
 
-/* Styles pour le nom du gîte */
 header h1 {
-    font-size: 40px; /* Taille de police du nom du gîte */
-    margin: 0; /* Supprimez les marges par défaut */
+    font-size: 40px;
+    margin: 0;
 }
 
-
-
-
-
-/* Styles pour le conteneur principal (body) */
 body {
     margin: 0;
     padding: 0;
@@ -43,39 +35,30 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
 }
 
 footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px; /* Ajoutez la marge au-dessus du footer */
-    padding: 10px; /* Ajoutez un espace intérieur au footer si nécessaire */
+    margin-top: 30px;
+    padding: 10px;
 }
 
-
-
-
-
-
-/* Styles pour la barre de navigation */
 nav {
-    position: fixed; /* Fixe la navbar en haut de l'écran */
-    top: 0; /* Place la navbar au bord supérieur de l'écran */
+    position: fixed;
+    top: 0;
     background-image: url('../image/back1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 15px 0; /* Espacement intérieur */
+    padding: 15px 0;
     margin: 0;
-    text-align: center; /* Centre le contenu horizontalement */
-    width: 100%; /* Occupe toute la largeur de l'écran */
-    transition: background-color 0.3s ease; /* Animation de transition de couleur */
-    z-index: 1000; /* Valeur supérieure à celle du header */
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
 }
-
-
 
 ul {
     list-style-type: none;
@@ -85,38 +68,35 @@ ul {
 }
 
 li {
-    display: inline; /* Afficher les éléments de la liste en ligne */
-    margin-right: 30px; /* Espacement entre les éléments */
+    display: inline;
+    margin-right: 30px;
     margin-left: 10px;
 }
 
 a {
-    text-decoration: none; /* Supprimer la décoration des liens */
-    color: white; /* Couleur du texte blanc */
-    font-weight: bold; /* Police en gras */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
-
-/* Styles pour la section de description */
 #description {
     padding: 20px;
     margin-top: 20px;
-    text-align: center; /* Centre le contenu */
-    display: flex; /* Utiliser Flexbox pour organiser verticalement */
-    flex-direction: column; /* Organiser verticalement */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 100px;
 }
 
-/* Styles pour les informations de la propriété (rendu vertical et centré) */
 .property-info {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre horizontalement */
+    align-items: center;
 }
 
 .property-info div {
     margin: 10px;
-    text-align: center; /* Centre le texte */
+    text-align: center;
 }
 
 .property-name {
@@ -136,11 +116,10 @@ a {
     margin-top: 20px;
 }
 
-
 #carte {
     text-align: center;
     position: relative;
-    margin-bottom: 150px; /* Ajoutez une marge basse équivalente à la hauteur de la carte */
+    margin-bottom: 150px;
     width: flex;
     height: 400px;
 }
@@ -152,40 +131,33 @@ a {
 }
 
 #calendar {
-    width: 60%; /* Utilisez 100% pour que le calendrier prenne la largeur totale de son conteneur */
-    height: 500px; /* Ajustez la hauteur du calendrier selon vos besoins */
-    position: relative; /* Utilisez "relative" au lieu de "absolute" */
-    margin: 0 auto; /* Pour centrer horizontalement le calendrier */
+    width: 60%;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
     margin-bottom: 20px;
 }
 
-
 #map {
-    width: 80%; /* Définir la largeur de la carte */
-    height: 100%; /* Définir la hauteur de la carte */
-    position: absolute; /* Position absolue par rapport au parent */
-    left: 50%; /* Centrer horizontalement au milieu de la page */
-    transform: translateX(-50%); /* Ajuster la position horizontale au milieu */
-    border: 1px solid #ccc; /* Ajouter une bordure pour la carte (optionnel) */
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #ccc;
 }
 
 #carte h2 {
-    margin-bottom: 10px; /* Espacement entre le texte et la carte */
+    margin-bottom: 10px;
 }
 
-
-
-
-
-/* Styles pour la page de connexion */
 #connexion {
-    
     padding: 20px;
     text-align: center;
-    position: relative; /* Ajoutez une position relative pour centrer le bouton */
-    overflow: hidden; /* Cache le débordement du bouton centré */
-    height: 100%; /* Ajuste la hauteur de la section de connexion à 100% */
-    box-sizing: border-box; /* Inclut la marge dans la hauteur totale */
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .login-container {
@@ -224,9 +196,8 @@ input[type="password"] {
 .form-group {
     margin-bottom: 20px;
     text-align: left;
-    margin-right: 20px; /* Ajoutez une marge à droite pour éviter que les cadres ne touchent le bord */
+    margin-right: 20px;
 }
-
 
 #contact {
     padding: 20px;
@@ -243,18 +214,14 @@ input[type="password"] {
     margin-top: 20px;
 }
 
-
 #contact a {
-    color: #007bff; /* Couleur du lien */
-    text-decoration: underline; /* Souligner le lien au survol */
+    color: #007bff;
+    text-decoration: underline;
 }
-
-
 
 #galerie {
     text-align: center;
     padding: 20px;
-
 }
 
 .carousel-container {
@@ -265,7 +232,6 @@ input[type="password"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .carousel-slide {
@@ -281,18 +247,18 @@ input[type="password"] {
 
 #prevBtn, #nextBtn {
     width: 40px;
-    height: 40px; /* Ajustez la hauteur pour rendre les boutons ronds */
+    height: 40px;
     position: absolute;
-    top: 50%; /* Réglé à 50% pour centrer verticalement */
-    left: 0; /* Ajoutez un padding aux flèches pour les centrer horizontalement */
+    top: 50%;
+    left: 0;
     transform: translateY(-50%);
     font-size: 24px;
     color: #333;
     border: none;
     cursor: pointer;
-    border-radius: 50%; /* Rend les boutons ronds */
-    text-align: center; /* Centre le contenu horizontalement */
-    line-height: 20px; /* Centre le contenu verticalement */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
 }
 
 #prevBtn {

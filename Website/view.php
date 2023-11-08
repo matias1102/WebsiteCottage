@@ -1,11 +1,9 @@
 <?php
-    include 'config.php'; // Inclure votre fichier de configuration de la base de données
-    // Récupérez la description
+    include 'config.php'; 
     $sqlDescription = "SELECT description, price, bedrooms, max_capacity, language, rates, payment_methods FROM site_info";
     $stmtDescription = $pdo->query($sqlDescription);
     $info = $stmtDescription->fetch(PDO::FETCH_ASSOC);
 
-    // Récupérez les informations de contact
     $sqlContact = "SELECT address, phone, email, facebook FROM site_info";
     $stmtContact = $pdo->query($sqlContact);
     $contactInfo = $stmtContact->fetch(PDO::FETCH_ASSOC);
@@ -29,7 +27,6 @@
 </head>
 <body>
     
-    <!-- En-tête avec le logo, le nom du gîte et le bouton de connexion -->
     <header>
         <div>
             <img src="../image/LOGO.webp" alt="Logo du Gîte" loading="lazy"></div>
@@ -38,7 +35,6 @@
         </div>
     </header>
 
-    <!-- Barre de navigation -->
     <nav>
         <ul>
             <li><a href="../Website/view.php">Accueil</a></li>
@@ -51,9 +47,7 @@
     </nav>
 
 
-    <!-- Page d'accueil -->
     <section id="accueil">
-        <!-- Contenu de la page d'accueil -->
     </section>
 
     
@@ -61,10 +55,7 @@
         <div class="carousel-container">
             
             <?php
-            // Inclure votre fichier de configuration de la base de données
             include 'config.php';
-
-            // Récupérer les images de la base de données
             $sqlImages = "SELECT * FROM photos";
             $stmtImages = $pdo->query($sqlImages);
             $images = $stmtImages->fetchAll(PDO::FETCH_ASSOC);
@@ -134,7 +125,6 @@
         <h2>Contactez-nous</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <!-- Utilisez les informations de contact récupérées depuis la base de données -->
                 <p><strong>Adresse :</strong> <?php echo $contactInfo['address']; ?></p>
                 <p><strong>Téléphone :</strong> <?php echo $contactInfo['phone']; ?></p>
                 <p><strong>Email :</strong> <?php echo $contactInfo['email']; ?></p>
@@ -143,9 +133,7 @@
         </div>
     </section>
     
-    <!-- Pied de page -->
     <footer>
-        <!-- Adresse du gîte -->
         Gites Figuies © 2023
     </footer>
    

@@ -7,16 +7,12 @@ if (isset($_SESSION['authentifie']) && $_SESSION['authentifie'] === true) {
     exit;
 }
 
-// Votre logique de traitement de la connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérez les données du formulaire
     $usernameInput = $_POST['username'];
     $passwordInput = $_POST['password'];
 
-    // Comparez les identifiants avec vos données de connexion
     $users = [
         ['username' => 'admin', 'password' => 'motdepasse123'],
-        // Ajoutez d'autres identifiants ici si nécessaire
     ];
 
     // Vérifiez si les identifiants sont valides
@@ -29,13 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($identifiants_valides) {
-        // Authentification réussie
-        // Vous pouvez stocker des informations d'authentification dans une session
         $_SESSION['authentifie'] = true;
         header('Location: admin.php');
         exit;
     } else {
-        // Identifiants incorrects, affichez un message d'erreur
         $messageErreur = 'Identifiants incorrects. Veuillez réessayer.';
     }
 }
@@ -47,12 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
-    <!-- Ajoutez ici vos mots-clés pour le référencement (balise meta) -->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="../Js/connexion.js"></script>
 </head>
 <body>
-    <!-- Header (peut être le même que sur les autres pages) -->
     <header>
         <div>
             <img src="../image/LOGO.webp" alt="Logo du Gîte"></div>
@@ -81,9 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
 
-    <!-- Pied de page (peut être le même que sur les autres pages) -->
     <footer>
-        <!-- Adresse du gîte -->
         Gites Figuies © 2023
     </footer>
 </body>

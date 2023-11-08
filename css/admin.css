@@ -1,47 +1,43 @@
 /* Styles pour l'en-tête */
 header {
     margin: 0;
-    background-color: #53B7FF; /* Couleur de fond de l'en-tête */
-    padding: 1%; /* Espacement intérieur */
-    display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
+    background-color: #53B7FF;
+    padding: 1%;
+    display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Espacez les éléments horizontalement */
-    align-items: center; /* Alignez verticalement au centre */
-    color: white; /* Couleur du texte blanc */
+    justify-content: space-between;
+    align-items: center;
+    color: white;
 }
-
 
 /* Styles pour le conteneur du contenu de l'en-tête */
 .header-content {
-    display: flex; /* Utiliser Flexbox pour centrer les éléments horizontalement */
-    align-items: center; /* Aligner verticalement au centre */
+    display: flex;
+    align-items: center;
 }
 
 /* Styles pour le logo */
 header img {
-    max-width: 100px; /* Définir la largeur maximale du logo */
-    height: auto; /* Hauteur automatique proportionnelle */
-    margin-right: 10px; /* Espacement entre le logo et le nom du gîte */
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
 }
 
 /* Styles pour le nom du gîte */
 header h1 {
-    font-size: 40px; /* Taille de police du nom du gîte */
-    margin: 0; /* Supprimez les marges par défaut */
+    font-size: 40px;
+    margin: 0;
 }
-
 
 /* Styles pour le conteneur principal (body) */
 body {
     margin: 0;
     padding: 0;
     background-image: url('../image/image4.jpeg');
-    background-image: url('../image/image4.jpeg');
     align-items: center;
     justify-content: center;
-    text-align: center; /* Ajout de la propriété text-align: center */
+    text-align: center;
 }
-
 
 /* Styles pour la barre de navigation de la page d'administration */
 nav {
@@ -74,8 +70,6 @@ section {
     padding: 20px;
     margin: 20px;
     border-radius: 4px;
-
-    
 }
 
 h2 {
@@ -116,50 +110,48 @@ section form p {
 
 /* Styles pour "adresse :" */
 section form p label {
-    flex: 1; /* Utilisation de flexbox pour aligner "adresse :" à gauche */
+    flex: 1;
     font-weight: bold;
     margin-right: 10px;
 }
 
 /* Styles pour le champ de saisie (input) */
 section form p input[type="text"] {
-    flex: 3; /* Utilisation de flexbox pour aligner le champ de saisie à droite */
+    flex: 3;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 32px; /* Réduire la taille de la police du placeholder */
+    font-size: 32px;
 }
 
 /* Styles pour le placeholder */
 section form p input[type="text"]::placeholder {
-    font-size: 30px; /* Réduire davantage la taille de la police du placeholder */
-    color: #999; /* Couleur du placeholder */
+    font-size: 30px;
+    color: #999;
 }
-
 
 /* Styles pour la zone de description */
 section form textarea {
-    width: 80%; /* Largeur de 80% de la largeur de l'écran */
-    height: 300px; /* Hauteur fixe en pixels (ajustez selon vos besoins) */
-    padding: 10px; /* Espacement intérieur pour le contenu texte */
-    font-size: 18px; /* Ajustez la taille de la police selon vos préférences */
+    width: 80%;
+    height: 300px;
+    padding: 10px;
+    font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 10px;
 }
 
-
 /* Styles pour le placeholder de la zone de description */
 section form textarea::placeholder {
-    font-size: 16px; /* Ajustez la taille de la police du placeholder selon vos préférences */
-    color: #999; /* Couleur du placeholder */
+    font-size: 16px;
+    color: #999;
 }
 
 /* Styles pour les conteneurs d'image */
 .image-container {
     display: inline-block;
     text-align: center;
-    margin: 10px; /* Espace entre les images */
+    margin: 10px;
 }
 
 /* Styles pour les boutons de suppression */
@@ -180,17 +172,17 @@ section form textarea::placeholder {
 
 /* Changer la couleur du texte en noir */
 .preview {
-    max-width: 200px; /* Limitez la largeur à 200 pixels */
-    height: auto; /* Hauteur proportionnelle */
-    color: black; /* Changer la couleur du texte en noir */
+    max-width: 200px;
+    height: auto;
+    color: black;
 }
 
 footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px; /* Ajoutez la marge au-dessus du footer */
-    padding: 10px; /* Ajoutez un espace intérieur au footer si nécessaire */
+    margin-top: 30px;
+    padding: 10px;
 }
 
 #calendrier {
@@ -200,9 +192,9 @@ footer {
 }
 
 #admin-calendar {
-    width: 60%; /* Utilisez 100% pour que le calendrier prenne la largeur totale de son conteneur */
-    height: 500px; /* Ajustez la hauteur du calendrier selon vos besoins */
-    position: relative; /* Utilisez "relative" au lieu de "absolute" */
-    margin: 0 auto; /* Pour centrer horizontalement le calendrier */
+    width: 60%;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
     margin-bottom: 20px;
 }

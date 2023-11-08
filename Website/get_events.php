@@ -12,9 +12,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     ];
 }
 
-
-
-// Renvoyer les événements au format JSON
 echo json_encode($events);
 ?>
 
