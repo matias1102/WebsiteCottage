@@ -1,34 +1,29 @@
 <?php
-include 'config.php';
+include '../Website/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date = $_POST['date'];
     $state = $_POST['state'];
 
-    // Vérifier si la date existe dans la table
-    $existingDate = $pdo->prepare("SELECT date FROM calendar WHERE date = :date");
-    $existingDate->bindParam(':date', $date, PDO::PARAM_STR);
-    $existingDate->execute();
+    // Vérifiez la valeur du bouton soumis (Disponible ou Indisponible)
+    $action = $_POST['action'];
 
-    if ($existingDate->fetchColumn()) {
-        // Si la date existe, effectuez une mise à jour de l'état
-        $sql = "UPDATE calendar SET state = :state WHERE date = :date";
-    } else {
-        // Sinon, insérez une nouvelle entrée
-        $sql = "INSERT INTO calendar (date, state) VALUES (:date, :state)";
+    // Maintenant, en fonction de la valeur de $action, mettez à jour la base de données.
+    if ($action === 'disponible') {
+        // Mettez à jour la table calendar pour marquer la date comme disponible
+        $sql = "UPDATE calendar SET state = 'disponible' WHERE date = :date";
+    } elseif ($action === 'indisponible') {
+        // Mettez à jour la table calendar pour marquer la date comme indisponible
+        $sql = "UPDATE calendar SET state = 'indisponible' WHERE date = :date";
     }
 
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':date', $date, PDO::PARAM_STR);
-    $stmt->bindParam(':state', $state, PDO::PARAM_STR);
 
     if ($stmt->execute()) {
-        echo 'État enregistré avec succès';
+        echo 'État mis à jour avec succès';
     } else {
-        echo 'Erreur lors de l\'enregistrement de l\'état';
+        echo 'Erreur lors de la mise à jour de l\'état';
     }
-} else {
-    echo 'Méthode non autorisée';
 }
 ?>
-

@@ -8,42 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
             var date = info.event.startStr;
             var state = info.event.extendedProps.state;
 
-            // Montrez les boutons "Disponible" et "Indisponible"
-            document.getElementById('buttons').style.display = 'block';
+            // Mettez à jour les valeurs des champs cachés dans le formulaire
+            document.getElementById('dateInput').value = date;
+            document.getElementById('stateInput').value = state;
 
-            // Configurez les actions pour les boutons
-            document.getElementById('availableButton').addEventListener('click', function() {
-                // Utilisez une requête AJAX pour envoyer les données au backend
-                updateEventState(date, 'disponible');
-            });
-
-            document.getElementById('unavailableButton').addEventListener('click', function() {
-                // Utilisez une requête AJAX pour envoyer les données au backend
-                updateEventState(date, 'indisponible');
-            });
+            // Soumettez le formulaire
+            document.getElementById('updateForm').submit();
         },
         defaultAllDayEventDuration: { days: 1 } // Durée par défaut pour les événements d'une journée
     });
 
     calendar.render();
-
-    // Fonction pour mettre à jour l'état de l'événement en base de données
-    function updateEventState(date, state) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'save_state.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Gérer la réponse du serveur ici (par exemple, afficher un message de confirmation)
-                alert(xhr.responseText);
-                // Cachez à nouveau les boutons après la mise à jour
-                document.getElementById('buttons').style.display = 'none';
-                // Rechargez le calendrier pour refléter le changement
-                calendar.refetchEvents();
-            }
-        };
-        xhr.send('date=' + date + '&state=' + state);
-    }
 });
+
 
 

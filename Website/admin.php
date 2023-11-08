@@ -13,7 +13,7 @@ if (isset($_POST['deconnexion'])) {
     exit;
 }
 // Inclure votre fichier de configuration de base de données
-include 'config.php';
+include '../Website/config.php';
 
 // Récupérez les informations du site depuis la base de données
 $sqlInfo = "SELECT description, price, bedrooms, max_capacity, language, rates, payment_methods, address, phone, email, facebook FROM site_info";
@@ -182,10 +182,12 @@ if (isset($_POST['update_info'])) {
     <h1>Gérer la disponibilité</h1>
     <section id=calendrier>
         <div id="admin-calendar"></div>
-        <div id="buttons">
-            <button id="availableButton">Disponible</button>
-            <button id="unavailableButton">Indisponible</button>
-        </div>
+        <form id="updateStateForm" action="save_state.php" method="post">
+            <input type="hidden" name="date" id="dateInput">
+            <input type="hidden" name="state" id="stateInput">
+            <button type="submit" name="action" value="disponible">Disponible</button>
+            <button type="submit" name="action" value="indisponible">Indisponible</button>
+        </form>
     </section>
 
     <h1>Modifier les Informations de Contact</h1>
